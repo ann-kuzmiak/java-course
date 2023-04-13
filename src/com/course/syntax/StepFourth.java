@@ -9,10 +9,14 @@ public class StepFourth {
         int number = scanner.nextInt();
         if (number < 0) {
             System.out.println("An error occurred. Number is negative");
-        } else if (number % 3 == 0) {
-            System.out.println("The number multiple to 3");
-        } else if (number % 2 == 0) {
-            System.out.println("The number is even");
+        }
+        for (int i = 0; i <= number; i++) {
+            System.out.println("Value " + i + ":");
+            if (i % 3 == 0) {
+                System.out.println("The number multiple to 3");
+            } else if (i % 2 == 0) {
+                System.out.println("The number is even");
+            }
         }
     }
 
@@ -26,13 +30,13 @@ public class StepFourth {
 
 
     public static int divisor(int n) {
-        int i = n - 1;
+        int i = n / 2;
         for (; i >= 1; i--) {
             if (n % i == 0) {
-                break;
+                return i;
             }
         }
-        return i;
+        return 1;
     }
 
     public static void getAge() {
@@ -44,7 +48,6 @@ public class StepFourth {
             age = scanner.nextInt();
             if (age <= 0 || age > 140) {
                 System.out.println("Incorrect value provided");
-                continue;
             } else {
                 System.out.println("Success! Valid age is saved");
                 isCorrect = true;
