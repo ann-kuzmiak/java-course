@@ -1,7 +1,15 @@
 package com.course.syntax;
 
 import java.util.Scanner;
+
 public class StepSixth {
+    public static void main(String[] args) {
+        String s = "Test java sentence task 1";
+        StepSixth.task1(s);
+        StepSixth.task2(s);
+        System.out.println(StepSixth.task3());
+    }
+
     public static void task1(String s) {
         s = s.replaceAll(" ", "").toUpperCase();
         s.chars().forEach(x -> System.out.println((char) x));
