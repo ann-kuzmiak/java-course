@@ -36,7 +36,7 @@ public class StepFifth {
     }
 
     public static double getBiggest(double[] numbers) {
-        double largest = -Double.MIN_VALUE;
+        double largest = numbers[0];
         for (double n : numbers) {
             if (largest < n) {
                 largest = n;
