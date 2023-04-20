@@ -37,9 +37,9 @@ public class StepFifth {
 
     public static double getBiggest(double[] numbers) {
         double largest = numbers[0];
-        for (double n : numbers) {
-            if (largest < n) {
-                largest = n;
+        for (int i = 1; i < numbers.length; i++) {
+            if (largest < numbers[i]) {
+                largest = numbers[i];
             }
         }
         return largest;
