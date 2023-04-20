@@ -36,12 +36,13 @@ public class StepSixth {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter sentence");
         String sentence = scanner.nextLine();
+
         System.out.println("enter a symbol");
-        char symbol = scanner.next().charAt(0);
+        String symbol = scanner.nextLine();
 
         int counter = 0;
         for (char c : sentence.toCharArray()) {
-            if (c == symbol) {
+            if (symbol.equals(String.valueOf(c))) {
                 counter++;
             }
         }
