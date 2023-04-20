@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StepSixth {
     public static void main(String[] args) {
-        String s = "Test java sentence task 1";
+        String s = "Test sentence task one more word";
         StepSixth.task1(s);
         StepSixth.task2(s);
         System.out.println(StepSixth.task3());
@@ -23,9 +23,11 @@ public class StepSixth {
         } else {
             String[] words = s.split(" ");
             for (int i = 0; i < words.length; i++) {
-                if (i % 2 == 0) {
-                    System.out.println(words[i].replace(words[i].substring(0, 1), words[i].substring(0, 1).toUpperCase()));
-                } else System.out.println(words[i]);
+                if ((i + 1) % 2 == 0) {
+                    System.out.println(words[i].toUpperCase());
+                } else {
+                    System.out.println(words[i]);
+                }
             }
         }
     }
@@ -39,8 +41,9 @@ public class StepSixth {
 
         int counter = 0;
         for (char c : sentence.toCharArray()) {
-            if (c == symbol)
+            if (c == symbol) {
                 counter++;
+            }
         }
         return counter;
     }
