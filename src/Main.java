@@ -1,19 +1,28 @@
-import com.course.syntax.StepFirst;
-import com.course.syntax.StepFourth;
-import com.course.syntax.StepSecond;
-import com.course.syntax.StepThird;
-
+import com.course.OOP.Manager;
+import com.course.OOP.User;
+import com.course.syntax.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        stepFirst();
+//        stepFirst();
+//
+//        stepSecond();
+//
+//        stepThird();
+//
+//        stepFourth();
 
-        stepSecond();
+        User user = new User("Anna Kuzmiak", "annwrst@gmail.com", "Admin");
+        user.setDeliveryAddress("Ukraine", "KR", "Chornovola", "38", "03894");
+        user.printUserInfo();
 
-        stepThird();
+        User user2 = new User("Anna Kuzmak", "annwrst+88@gmail.com", "Admin");
+        user2.printUserInfo();
 
-        stepFourth();
+        Manager manager1 = new Manager("Manager Name", "manaer@gv.rd", "Customer", "position");
+        manager1.printUserInfo();
+        user2.setManager(manager1);
     }
 
     public static void stepFirst() {
