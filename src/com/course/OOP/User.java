@@ -89,14 +89,6 @@ public class User {
         return cards;
     }
 
-    public String cardsToString() {
-        String result="";
-        for(Card card: cards) {
-            result+=card.toString();
-        }
-        return result;
-    }
-
     public void setCard(String cardNumber, String expireDate, String cvv, String cardType) {
         cards.add(new Card(cardNumber, expireDate, cvv, cardType));
     }
