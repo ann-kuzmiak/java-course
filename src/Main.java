@@ -5,14 +5,6 @@ import com.course.syntax.*;
 public class Main {
     public static void main(String[] args) {
 
-//        stepFirst();
-//
-//        stepSecond();
-//
-//        stepThird();
-//
-//        stepFourth();
-
         User user = new User("Anna Kuzmiak", "annwrst@gmail.com", "Admin");
         user.setDeliveryAddress("Ukraine", "KR", "Chornovola", "38", "03894");
         user.printUserInfo();
@@ -23,6 +15,9 @@ public class Main {
         Manager manager1 = new Manager("Manager Name", "manaer@gv.rd", "Customer", "position");
         manager1.printUserInfo();
         user2.setManager(manager1);
+        manager1.setCard("5627379373630191", "12-04-2024", "622", "Visa");
+
+        System.out.println(manager1.getCards().toString());
     }
 
     public static void stepFirst() {

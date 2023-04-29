@@ -3,7 +3,6 @@ package com.course.OOP;
 import java.util.ArrayList;
 
 public class User {
-
     protected int id;
     protected static int counter = 0;
     protected String firstName;
@@ -90,7 +89,15 @@ public class User {
         return cards;
     }
 
-    public void setCards(String cardNumber, String expireDate, String cvv, String cardType) {
+    public String cardsToString() {
+        String result="";
+        for(Card card: cards) {
+            result+=card.toString();
+        }
+        return result;
+    }
+
+    public void setCard(String cardNumber, String expireDate, String cvv, String cardType) {
         cards.add(new Card(cardNumber, expireDate, cvv, cardType));
     }
 

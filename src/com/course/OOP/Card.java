@@ -62,4 +62,14 @@ public class Card {
     public void setCardType(String cardType) {
         this.cardType = cardType;
     }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "number='" + number + '\'' +
+                ", expireDate='" + expireDate + '\'' +
+                ", cvv='" + cvv + '\'' +
+                ", cardType='" + cardType + '\'' +
+                '}';
+    }
 }
