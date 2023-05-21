@@ -1,5 +1,8 @@
 package com.course.OOP;
 
+import com.course.OOP.exceptions.InvalidPhoneNumberException;
+import com.course.OOP.exceptions.InvalidRoleException;
+
 import java.util.ArrayList;
 
 public class User {
@@ -16,7 +19,7 @@ public class User {
     protected Role role;
     private Manager manager;
 
-    public User(String fullName, String email, String role) {
+    public User(String fullName, String email, String role) throws InvalidRoleException {
         String[] names = fullName.split(" ");
         this.firstName = names[0];
         if (names.length > 1) {
@@ -29,7 +32,7 @@ public class User {
         this.id = counter;
     }
 
-    public User(String firstName, String lastName, String email, String role) {
+    public User(String firstName, String lastName, String email, String role) throws InvalidRoleException{
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
@@ -63,10 +66,10 @@ public class User {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) throws InvalidPhoneNumberException {
         if (phoneNumber.startsWith("+")) {
             this.phoneNumber = phoneNumber;
-        } else System.out.println("Phone number is invalid, it must start with +");
+        } else throw new InvalidPhoneNumberException();
     }
 
     public Address getBillingAddress() {
