@@ -1,23 +1,12 @@
 import com.course.OOP.Manager;
 import com.course.OOP.User;
+import com.course.additionalSyntax.Child;
+import com.course.additionalSyntax.Parent;
 import com.course.syntax.*;
 
 public class Main {
     public static void main(String[] args) {
-
-        User user = new User("Anna Kuzmiak", "annwrst@gmail.com", "Admin");
-        user.setDeliveryAddress("Ukraine", "KR", "Chornovola", "38", "03894");
-        user.printUserInfo();
-
-        User user2 = new User("Anna Kuzmak", "annwrst+88@gmail.com", "Admin");
-        user2.printUserInfo();
-
-        Manager manager1 = new Manager("Manager Name", "manaer@gv.rd", "Customer", "position");
-        manager1.printUserInfo();
-        user2.setManager(manager1);
-        manager1.setCard("5627379373630191", "12-04-2024", "622", "Visa");
-
-        System.out.println(manager1.getCards().toString());
+        initBlocks();
     }
 
     public static void stepFirst() {
@@ -49,6 +38,26 @@ public class Main {
         System.out.println(StepFourth.factorial(6));
         System.out.println(StepFourth.divisor(6));
         StepFourth.getAge();
+    }
+
+    public static void OOPTask() {
+        User user = new User("Anna Kuzmiak", "annwrst@gmail.com", "Admin");
+        user.setDeliveryAddress("Ukraine", "KR", "Chornovola", "38", "03894");
+        user.printUserInfo();
+
+        User user2 = new User("Anna Kuzmak", "annwrst+88@gmail.com", "Admin");
+        user2.printUserInfo();
+
+        Manager manager1 = new Manager("Manager Name", "manaer@gv.rd", "Customer", "position");
+        manager1.printUserInfo();
+        user2.setManager(manager1);
+        manager1.setCard("5627379373630191", "12-04-2024", "622", "Visa");
+
+        System.out.println(manager1.getCards().toString());
+    }
+
+    public static void initBlocks() {
+        Child child = new Child();
     }
 }
 
