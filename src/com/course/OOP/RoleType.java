@@ -24,6 +24,7 @@ public enum RoleType {
     private boolean editAll = false;
     private boolean addAll = false;
     private boolean deleteAll = false;
+
     RoleType(String roleName) {
         this.roleName = roleName;
     }
@@ -34,24 +35,22 @@ public enum RoleType {
 
     public void assignPermissions() {
         switch (this) {
-            case ADMIN:
-                viewAll=true;
-                editAll=true;
-                addAll=true;
-                deleteAll=true;
-                break;
-            case MAINCUSTOMER:
+            case ADMIN -> {
+                viewAll = true;
+                editAll = true;
+                addAll = true;
+                deleteAll = true;
+            }
+            case MAINCUSTOMER -> {
                 viewAll = true;
                 addAll = true;
                 editAll = true;
-                break;
-            case CUSTOMER:
+            }
+            case CUSTOMER -> {
                 viewAll = true;
                 addAll = true;
-                break;
-            case VIEWER:
-                viewAll = true;
-                break;
+            }
+            case VIEWER -> viewAll = true;
         }
     }
 }

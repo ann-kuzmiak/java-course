@@ -1,30 +1,38 @@
 package com.course.OOP;
 
+import com.course.OOP.exceptions.InvalidRoleException;
+
 public class Role {
     RoleType roleType;
-    private String role;
-    private boolean viewAll = roleType.isViewAll();
-    private boolean editAll = roleType.isEditAll();
-    private boolean addAll = roleType.isAddAll();
-    private boolean deleteAll = roleType.isDeleteAll();
 
-    public Role(String role) {
+    private String role;
+    private boolean viewAll;
+    private boolean editAll;
+    private boolean addAll;
+    private boolean deleteAll;
+
+    public Role(String role) throws InvalidRoleException {
         roleType = switch (role) {
             case "Admin" -> RoleType.ADMIN;
             case "Main Customer" -> RoleType.MAINCUSTOMER;
             case "Customer" -> RoleType.CUSTOMER;
             case "Viewer" -> RoleType.VIEWER;
+            default -> throw new InvalidRoleException();
         };
+        roleType.assignPermissions();
+        viewAll = roleType.isViewAll();
+        editAll = roleType.isEditAll();
+        addAll = roleType.isAddAll();
+        deleteAll = roleType.isDeleteAll();
     }
-
     public String getRole() {
-        return role;
+        return roleType.getRoleName();
     }
 
     @Override
     public String toString() {
         return "Role{" +
-                "role='" + role + '\'' +
+                "role='" + getRole() + '\'' +
                 ", viewAll=" + viewAll +
                 ", editAll=" + editAll +
                 ", addAll=" + addAll +
