@@ -30,7 +30,7 @@ public enum RoleType {
     }
 
     public String getRoleName() {
-        return roleName;
+        return this.roleName;
     }
 
     public void assignPermissions() {

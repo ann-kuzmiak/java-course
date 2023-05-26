@@ -1,5 +1,6 @@
 package com.course.OOP;
 
+import com.course.OOP.exceptions.InvalidCardTypeException;
 import com.course.OOP.exceptions.InvalidPhoneNumberException;
 import com.course.OOP.exceptions.InvalidRoleException;
 
@@ -92,7 +93,7 @@ public class User {
         return cards;
     }
 
-    public void setCard(String cardNumber, String expireDate, String cvv, String cardType) {
+    public void setCard(String cardNumber, String expireDate, String cvv, String cardType) throws InvalidCardTypeException {
         cards.add(new Card(cardNumber, expireDate, cvv, cardType));
     }
 

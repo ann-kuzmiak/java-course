@@ -1,5 +1,6 @@
 import com.course.OOP.Manager;
 import com.course.OOP.User;
+import com.course.OOP.exceptions.InvalidCardTypeException;
 import com.course.OOP.exceptions.InvalidPhoneNumberException;
 import com.course.OOP.exceptions.InvalidRoleException;
 import com.course.syntax.*;
@@ -14,7 +15,7 @@ public class Main {
 
             //    user.setPhoneNumber("egveg");
             user.setPhoneNumber("+5000020024");
-            User user2 = new User("Anna Kuzmak", "annwrst+88@gmail.com", "Admikn");
+            User user2 = new User("Anna Kuzmak", "annwrst+88@gmail.com", "Admin");
             user2.printUserInfo();
 
             Manager manager1 = new Manager("Manager Name", "manaer@gv.rd", "Customer", "position");
@@ -23,7 +24,7 @@ public class Main {
             manager1.setCard("5627379373630191", "12-04-2024", "622", "Visa");
 
             System.out.println(manager1.getCards().toString());
-        } catch (InvalidRoleException | InvalidPhoneNumberException ex) {
+        } catch (InvalidRoleException | InvalidPhoneNumberException | InvalidCardTypeException ex) {
             System.out.println(ex.getMessage());
         } catch (Exception ex) {
             ex.printStackTrace();

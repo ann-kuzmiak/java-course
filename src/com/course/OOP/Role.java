@@ -4,8 +4,6 @@ import com.course.OOP.exceptions.InvalidRoleException;
 
 public class Role {
     RoleType roleType;
-
-    private String role;
     private boolean viewAll;
     private boolean editAll;
     private boolean addAll;
