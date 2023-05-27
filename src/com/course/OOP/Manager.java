@@ -1,8 +1,8 @@
 package com.course.OOP;
-
 import com.course.OOP.exceptions.InvalidRoleException;
+import com.course.OOP.interfaces.PrintInfo;
 
-public class Manager extends User {
+public class Manager extends User implements PrintInfo {
     private String position;
     private String responsibilityDistrict;
     private String workPhoneNumber;

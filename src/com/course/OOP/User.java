@@ -3,10 +3,11 @@ package com.course.OOP;
 import com.course.OOP.exceptions.InvalidCardTypeException;
 import com.course.OOP.exceptions.InvalidPhoneNumberException;
 import com.course.OOP.exceptions.InvalidRoleException;
+import com.course.OOP.interfaces.PrintInfo;
 
 import java.util.ArrayList;
 
-public class User {
+public class User implements PrintInfo {
     protected int id;
     protected static int counter = 0;
     protected String firstName;
@@ -33,7 +34,7 @@ public class User {
         this.id = counter;
     }
 
-    public User(String firstName, String lastName, String email, String role) throws InvalidRoleException{
+    public User(String firstName, String lastName, String email, String role) throws InvalidRoleException {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
@@ -92,6 +93,9 @@ public class User {
     public ArrayList<Card> getCards() {
         return cards;
     }
+    public void printCards() {
+        cards.forEach((card -> System.out.println(card.toString())));
+    }
 
     public void setCard(String cardNumber, String expireDate, String cvv, String cardType) throws InvalidCardTypeException {
         cards.add(new Card(cardNumber, expireDate, cvv, cardType));
@@ -124,7 +128,7 @@ public class User {
     }
 
     public void printUserInfo() {
-        System.out.println(this.toString());
+        System.out.println(this);
     }
 
     public String toStringLine(String valueName, Object value) {
