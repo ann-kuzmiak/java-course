@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class UserFileIO {
-
     private static final String PATH = "users.csv";
     static Scanner scanner;
 
@@ -24,7 +23,7 @@ public class UserFileIO {
         }
         scanner.close();
     }
-    public static User createUserfromConsole() {
+    public static User createUserFromConsole() {
         scanner = new Scanner(System.in);
         System.out.println("Enter full name");
         String fullName = scanner.nextLine();
@@ -36,7 +35,7 @@ public class UserFileIO {
     }
 
     public static void addUser() throws IOException {
-        User user = createUserfromConsole();
+        User user = createUserFromConsole();
         FileWriter fileWriter = new FileWriter(PATH, true);
         fileWriter.append(user.toString()).append("\n");
         System.out.println("User was successfully added");
