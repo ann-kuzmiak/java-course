@@ -1,20 +1,20 @@
 package com.course.OOP;
 
+import com.course.OOP.exceptions.InvalidCardTypeException;
+
 public class Card {
     private int id;
     private static int counter = 0;
     private String number;
     private String expireDate;
     private String cvv;
-    private String cardType;
+    private CardType cardType;
 
-    public Card(String number, String expireDate, String cvv, String cardType) {
+    public Card(String number, String expireDate, String cvv, String cardType) throws InvalidCardTypeException {
         this.number = number;
         this.expireDate = expireDate;
         this.cvv = cvv;
-        if (cardType == "Visa" || cardType == "MasterCard") {
-            this.cardType = cardType;
-        }
+        setCardType(cardType);
         this.counter++;
         this.id = counter;
     }
@@ -56,11 +56,15 @@ public class Card {
     }
 
     public String getCardType() {
-        return cardType;
+        return cardType.getCardType();
     }
 
-    public void setCardType(String cardType) {
-        this.cardType = cardType;
+    public void setCardType(String cardType) throws InvalidCardTypeException {
+        this.cardType = switch (cardType) {
+            case ("Visa") -> CardType.VISA;
+            case ("MasterCard") -> CardType.MASTERCARD;
+            default -> throw new InvalidCardTypeException();
+        };
     }
 
     @Override
@@ -69,7 +73,7 @@ public class Card {
                 "number='" + number + '\'' +
                 ", expireDate='" + expireDate + '\'' +
                 ", cvv='" + cvv + '\'' +
-                ", cardType='" + cardType + '\'' +
+                ", cardType='" + cardType.getCardType() + '\'' +
                 '}';
     }
 }

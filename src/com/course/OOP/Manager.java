@@ -1,16 +1,18 @@
 package com.course.OOP;
+import com.course.OOP.exceptions.InvalidRoleException;
+import com.course.OOP.interfaces.PrintInfo;
 
-public class Manager extends User {
+public class Manager extends User implements PrintInfo {
     private String position;
     private String responsibilityDistrict;
     private String workPhoneNumber;
 
-    public Manager(String fullName, String email, String role, String position) {
+    public Manager(String fullName, String email, String role, String position) throws InvalidRoleException {
         super(fullName, email, role);
         this.position = position;
     }
 
-    public Manager(String firstName, String lastName, String email, String role, String position) {
+    public Manager(String firstName, String lastName, String email, String role, String position) throws InvalidRoleException {
         super(firstName, lastName, email, role);
         this.position = position;
     }
