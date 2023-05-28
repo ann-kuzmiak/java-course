@@ -1,8 +1,5 @@
 package com.course;
-
-import com.course.OOP.Manager;
 import com.course.OOP.User;
-
 import java.util.*;
 
 public class CollectionsStep {
@@ -13,7 +10,7 @@ public class CollectionsStep {
         Map<String, String> map = new HashMap<>();
         map.put("key", "value1");
         map.put("keyy", "value2");
-        map.put("tea", "value3");
+        map.put("abc", "value3");
         System.out.println(task4(map));
 
     }
@@ -43,24 +40,14 @@ public class CollectionsStep {
     }
 
     public static void task3() {
-        Set<String> namesSet = new HashSet<>();
-        namesSet.add("Olya");
-        namesSet.add("Natasha");
-        namesSet.add("Polina");
-        namesSet.add("Vlad");
-        ArrayList<String> namesList = new ArrayList<>();
-        namesList.add("Bohdan");
-        namesList.add("Oleksandr");
-        namesList.add("Vlad");
-        namesList.add("Natasha");
-        Set<String> resultSet = new HashSet<>();
-        resultSet.addAll(namesSet);
-        resultSet.addAll(namesList);
-        System.out.println(resultSet);
+        Set<String> namesSet = new HashSet<>(Arrays.asList("Olya", "Natasha", "Polina", "Vlad"));
+        ArrayList<String> namesList = new ArrayList<>(Arrays.asList("Bohdan", "Oleksandr", "Vlad", "Natasha"));
+        namesSet.addAll(namesList);
+        System.out.println(namesSet);
     }
 
     public static Map<String, String> task4(Map<String, String> map) {
-        Map<String, String> result = new HashMap<>();
+        Map<String, String> result = new TreeMap<>();
         map.forEach((k, v) -> {
             if (k.length() == 3) result.put(k, v);
         });
