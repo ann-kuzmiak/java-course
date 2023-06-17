@@ -1,5 +1,7 @@
 package com.course.OOP;
 
+import com.course.OOP.exceptions.InvalidRoleException;
+
 public class Role {
     private String role;
     private boolean viewAll;
@@ -7,7 +9,7 @@ public class Role {
     private boolean addAll;
     private boolean deleteAll;
 
-    public Role(String role) {
+    public Role(String role) throws InvalidRoleException {
         switch (role) {
             case "Admin":
                 this.role = role;
@@ -32,7 +34,7 @@ public class Role {
                 viewAll = true;
                 break;
             default:
-                return;
+                throw new InvalidRoleException();
         }
     }
 
