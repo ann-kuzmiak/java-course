@@ -4,10 +4,6 @@ import com.course.OOP.exceptions.InvalidRoleException;
 
 public class Role {
     RoleType roleType;
-    private boolean viewAll;
-    private boolean editAll;
-    private boolean addAll;
-    private boolean deleteAll;
 
     public Role(String role) throws InvalidRoleException {
         roleType = switch (role) {
@@ -17,12 +13,8 @@ public class Role {
             case "Viewer" -> RoleType.VIEWER;
             default -> throw new InvalidRoleException();
         };
-        roleType.assignPermissions();
-        viewAll = roleType.isViewAll();
-        editAll = roleType.isEditAll();
-        addAll = roleType.isAddAll();
-        deleteAll = roleType.isDeleteAll();
     }
+
     public String getRole() {
         return roleType.getRoleName();
     }
@@ -31,10 +23,10 @@ public class Role {
     public String toString() {
         return "Role{" +
                 "role='" + getRole() + '\'' +
-                ", viewAll=" + viewAll +
-                ", editAll=" + editAll +
-                ", addAll=" + addAll +
-                ", deleteAll=" + deleteAll +
+                ", viewAll=" + roleType.isViewAll() +
+                ", editAll=" + roleType.isEditAll() +
+                ", addAll=" + roleType.isAddAll() +
+                ", deleteAll=" + roleType.isDeleteAll() +
                 '}';
     }
 }

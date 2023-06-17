@@ -6,8 +6,6 @@ import com.course.OOP.exceptions.InvalidPhoneNumberException;
 import com.course.OOP.exceptions.InvalidRoleException;
 import com.course.syntax.*;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -51,7 +49,7 @@ public class Main {
             User user = new User("Anna Kuzmiak", "annwrst@gmail.com", "Admin");
             user.setDeliveryAddress("Ukraine", "KR", "Chornovola", "38", "03894");
             user.printUserInfo();
-            //    user.setPhoneNumber("egveg");
+
             user.setPhoneNumber("+5000020024");
             User user2 = new User("Anna Kuzmak", "annwrst+88@gmail.com", "Admin");
             user2.printUserInfo();

@@ -30,7 +30,7 @@ public class User implements PrintInfo {
         this.fullName = fullName;
         this.email = email;
         this.role = new Role(role);
-        this.counter++;
+        counter++;
         this.id = counter;
     }
 
@@ -40,7 +40,7 @@ public class User implements PrintInfo {
         this.fullName = firstName + " " + lastName;
         this.email = email;
         this.role = new Role(role);
-        this.counter++;
+        counter++;
         this.id = counter;
     }
 
