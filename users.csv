@@ -1,0 +1,4 @@
+User{firstName='ann1', lastName='test', fullName='ann1 test', email='ann1@gmail.com', phoneNumber='null', billingAddress='null', deliveryAddress='null', role='Role{role='Customer', viewAll=true, editAll=false, addAll=true, deleteAll=false}'}
+User{firstName='annw2', lastName='test', fullName='annw2 test', email='annwrdt2@', phoneNumber='null', billingAddress='null', deliveryAddress='null', role='Role{role='Admin', viewAll=true, editAll=true, addAll=true, deleteAll=true}'}
+User{firstName='inv', lastName='null', fullName='inv', email='inv', phoneNumber='null', billingAddress='null', deliveryAddress='null', role='Role{role='null', viewAll=false, editAll=false, addAll=false, deleteAll=false}'}
+User{firstName='test', lastName='null', fullName='test', email='test@', phoneNumber='null', billingAddress='null', deliveryAddress='null', role='Role{role='Admin', viewAll=true, editAll=true, addAll=true, deleteAll=true}'}
