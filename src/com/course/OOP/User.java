@@ -19,6 +19,13 @@ public class User {
     protected Role role;
     private Manager manager;
 
+    public void initUser(String email, String role) {
+        this.email = email;
+        this.role = new Role(role);
+        this.counter++;
+        this.id = counter;
+    }
+
     public User(String fullName, String email, String role) throws InvalidRoleException {
         String[] names = fullName.split(" ");
         this.firstName = names[0];
@@ -26,20 +33,14 @@ public class User {
             this.lastName = names[1];
         }
         this.fullName = fullName;
-        this.email = email;
-        this.role = new Role(role);
-        this.counter++;
-        this.id = counter;
+        initUser(email, role);
     }
 
     public User(String firstName, String lastName, String email, String role) throws InvalidRoleException{
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = firstName + " " + lastName;
-        this.email = email;
-        this.role = new Role(role);
-        this.counter++;
-        this.id = counter;
+        initUser(email, role);
     }
 
     public int getId() {
